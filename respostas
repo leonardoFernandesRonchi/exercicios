@@ -1,0 +1,56 @@
+1)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int A[20] = {1, 1}, i, num, found = 0;
+
+    for (i = 2; i < 20; i++)
+        A[i] = A[i - 1] + A[i - 2];
+
+    printf("\nNumeros de Fibonacci:\n");
+    for (i = 0; i < 20; i++)
+        printf("%d ", A[i]);
+
+    printf("\n\nDigite um numero para verificar se ele esta na sequencia de Fibonacci: ");
+    scanf("%d", &num);
+
+    for (i = 0; i < 20; i++)
+    {
+        if (A[i] == num)
+        {
+            found = 1; // Número encontrado
+            break;
+        }
+    }
+
+    if (found)
+        printf("\nO numero %d esta na sequencia de Fibonacci.\n", num);
+    else
+        printf("\nO numero %d NAO esta na sequencia de Fibonacci.\n", num);
+
+    return 0;
+}
+
+
+
+exercicio 2)
+
+
+let inputString = prompt("Digite uma string para verificar a presença da letra 'a':");
+
+let count = 0;
+
+for (let i = 0; i < inputString.length; i++) {
+  let char = inputString[i];
+  if (char === 'a' || char === 'A') {
+    count++;
+  }
+}
+
+if (count > 0) {
+  console.log(`A letra 'a' (maiúscula ou minúscula) ocorre ${count} vez(es) na string.`);
+} else {
+  console.log("A letra 'a' (maiúscula ou minúscula) não foi encontrada na string.");
+}
